@@ -35,14 +35,6 @@ steps:
       queue: default
 
   - name: "6 step"
-    command: "script.sh"
-    artifact_paths: "artifacts/*"
-    env:
-      company: "to build matrix of the future"
-    agents:
-      queue: default
-
-  - name: "7 step"
     command: "script2.sh"
     env:
       company: "to build matrix of the future"

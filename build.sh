@@ -1,4 +1,5 @@
-export IMP_CI_EVENTS_CMD_PATH="/imp-ci-events-bin"
-$IMP_CI_EVENTS_CMD_PATH/imp-ci events new --name "subcommand-1" --child-of "command"
+apt-get install golang-go
+
+go run /source/go/src/improbable.io/cmd/imp-ci/main.go events new --name "subcommand-1" --child-of "command"
 sleep 7
-$IMP_CI_EVENTS_CMD_PATH/imp-ci events new --name "subcommand-1" --child-of "command"
+go run /source/go/src/improbable.io/cmd/imp-ci/main.go events new --name "subcommand-1" --child-of "command"

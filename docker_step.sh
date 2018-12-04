@@ -1,8 +1,8 @@
+BUILD_EVENT_CACHE=${TMPDIR:-"/tmp"}
 
-set -uo pipefail
-
-docker run hello-world
-
-docker ps -as | grep hello-world | docker rm $(awk '{print $1}')
-
-echo "non-existing var $DHJAS"
+docker run \
+    --volume="./build.sh:/scripts/build.sh" \
+    --volume="/Users/yerzhanmademikhanov/work/temp/imp-ci:/imp-ci-events-bin/imp-ci" \
+    -e="BUILD_EVENT_CACHE=/build_event_cache" \
+    --volume="${BUILD_EVENT_CACHE}:/build_event_cache" \
+    --rm ubuntu bash /scripts/build.sh
